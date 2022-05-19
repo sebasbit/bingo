@@ -17,3 +17,13 @@ In order to track my advance I'll write a list of requirements, these requiremen
 |      | The user may delete (soft delete) a Bingo after confirming his choice |
 |      | The user may share a link to the Bingo after adding content to all the cells in the grid (24 cells) |
 |      | The user may clone a Bingo and edit it |
+
+### Game view
+| Done | Requirement |
+| ---- | ----------- |
+|      | The system must pick a random value from the list of available values in the Bingo |
+|      | The system must save the value after pick it |
+|      | The system must not pick a value more than once |
+|      | The system must dsiplay the list of selected values |
+|      | Each change must be saved after done (for each selected value, mark it as such) |
+|      | The user may reset the game, no values selected and shuffle the options |
