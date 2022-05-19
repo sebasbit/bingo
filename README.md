@@ -28,7 +28,7 @@ In order to track my advance I'll write a list of requirements, these requiremen
 |      | Each change must be saved after done (for each selected value, mark it as such) |
 |      | The user may reset the game, no values selected and shuffle the options |
 
-### Game view
+### Play view
 | Done | Requirement |
 | ---- | ----------- |
 |      | An unregistered user may create a card for a Bingo, but it will be assigned by default to the Guest user |
@@ -43,3 +43,17 @@ In order to track my advance I'll write a list of requirements, these requiremen
 |      | Each change must be saved after done |
 |      | The user may reset the game, no cells marked |
 |      | The user may share a link to his Bingo card |
+|      | The user may delete (soft delete) a Bingo card |
+
+### I don't know how to classify this
+| Done | Requirement |
+| ---- | ----------- |
+|      | The index page should have 4 links to explore, create, play and about pages |
+|      | The system must implement Symfony Login and Register, including email confirmation |
+|      | The website should have a static navbar 4 links to explore, create, play and about pages |
+|      | The system must implement an apiKey authentication |
+|      | The Gest and ContentCreator users must be created by default |
+|      | An unregistered user must logged in as Guest user by default |
+|      | All bingo provided by the system must belong to the ContentCreator user |
+|      | The user must have an email and a picture, the picture should be the only editable field |
+|      | The user profile page should display his Bingo, cards and games and the options to edit them |
