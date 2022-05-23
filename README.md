@@ -57,3 +57,6 @@ To track my advance I'll write a list of requirements divided into four sections
 |      | All Bingo provided by the system must belong to the Content-Creator user |
 |      | The user must have an email and a picture. The picture should be the only editable field |
 |      | The user profile page should display his Bingo, cards, and games and the options to edit them |
+
+## Views
+This website has around 10 views, [here are the mockups](./mockups.png) for each view.
