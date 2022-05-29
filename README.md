@@ -1,4 +1,4 @@
-# bingo
+# Bingo
 A simple website to play Bingo developed with PHP using Symfony Framework. This project is based on [Bingo Baker](https://bingobaker.com), we could consider it a clone just for practicing.
 
 ## Requirements
@@ -10,6 +10,7 @@ To track my advance I'll write a list of requirements divided into four sections
 |      | The user must log in to create new Bingo, otherwise the system must prompt the user to do so |
 |      | The user must write the name of the Bingo, then it will be created |
 |      | The system should redirect to the edit page after creating a new Bingo |
+|      | When a new Bingo is created, it should have 24 cells by default |
 |      | The edit page should print the name of the Bingo, a card with the word Bingo at the top, a 5x5 grid, and an option to add or remove additional cells |
 |      | Each cell should be editable, and the user should be able to change its content |
 |      | The user should be able to change the font color, background color, and the free space image on the Bingo card |
@@ -59,4 +60,4 @@ To track my advance I'll write a list of requirements divided into four sections
 |      | The user profile page should display his Bingo, cards, and games and the options to edit them |
 
 ## Views
-This website has around 10 views, [here are the mockups](./mockups.png) for each view.
+This website has around 10 views, [here are the mockups](./mockups.png) for each view, furthermore [here is the roadmap](./road-map.png) which explains how to navigate the website.
