@@ -4,13 +4,20 @@ namespace App\Entity;
 
 final class Box
 {
+    private BoxId $id;
     private int $order;
     private string $content;
 
-    public function __construct(int $order, string $content)
+    public function __construct(BoxId $id, int $order, string $content)
     {
+        $this->id = $id;
         $this->order = $order;
         $this->content = $content;
+    }
+
+    public function id(): BoxId
+    {
+        return $this->id;
     }
 
     public function order(): int

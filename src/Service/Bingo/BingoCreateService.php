@@ -5,6 +5,7 @@ namespace App\Service\Bingo;
 use App\Entity\Bingo;
 use App\Entity\BingoId;
 use App\Entity\Box;
+use App\Entity\BoxId;
 
 final class BingoCreateService
 {
@@ -16,7 +17,7 @@ final class BingoCreateService
     public function execute(BingoCreateInput $input): Bingo
     {
         $bingo = new Bingo(
-            new BingoId(), // Uuid(null), | $this->bingoRepository->nextIdentity();
+            BingoId::generate(), // Uuid(null), | $this->bingoRepository->nextIdentity();
             $input->userId(),
             $input->title(),
             self::DEFAULT_FONT_COLOR,
@@ -25,7 +26,7 @@ final class BingoCreateService
         );
 
         for ($i=0; $i < self::DEFAULT_NUMBER_OF_BOXES; $i++) {
-            $bingo->addBox(new Box($i, ''));
+            $bingo->addBox(new Box(BoxId::generate(), $i, ''));
         }
 
         return $bingo;

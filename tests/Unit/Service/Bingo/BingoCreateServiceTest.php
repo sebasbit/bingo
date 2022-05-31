@@ -4,6 +4,7 @@ namespace App\Tests\Unit\Service\Bingo;
 
 use PHPUnit\Framework\TestCase;
 use App\Entity\BingoId;
+use App\Entity\BoxId;
 use App\Service\Bingo\BingoCreateInput;
 use App\Service\Bingo\BingoCreateService;
 
@@ -55,6 +56,7 @@ class BingoCreateServiceTest extends TestCase
         for ($i = 0; $i < 24; $i++) {
             $box = $boxes[$i];
 
+            $this->assertInstanceOf(BoxId::class, $box->id());
             $this->assertSame($i, $box->order());
             $this->assertSame('', $box->content());
         }
