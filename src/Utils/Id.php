@@ -5,6 +5,10 @@ namespace App\Utils;
 use InvalidArgumentException;
 use Ramsey\Uuid\Uuid;
 
+// TODO: move UUID generation to the repository, make id independent
+// of value type using two methods:
+//   + Id::fromString(strin $value): static; // for UUID
+//   + Id::fromInt(int $value): static; // for Sequences
 class Id
 {
     private string $value;
