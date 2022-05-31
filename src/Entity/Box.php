@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-final class Box
+class Box
 {
     private BoxId $id;
     private int $order;

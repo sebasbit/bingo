@@ -2,18 +2,18 @@
 
 namespace App\Service\Bingo;
 
-final class BingoCreateInput
+class BingoCreateInput
 {
-    private int $userId;
+    private string $userId;
     private string $title;
 
-    public function __construct(int $userId, string $title)
+    public function __construct(string $userId, string $title)
     {
         $this->userId = $userId;
         $this->title = $title;
     }
 
-    public function userId(): int
+    public function userId(): string
     {
         return $this->userId;
     }

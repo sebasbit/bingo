@@ -2,17 +2,17 @@
 
 namespace App\Entity;
 
-final class Bingo
+class Bingo
 {
     private BingoId $id;
-    private int $userId;
+    private UserId $userId;
     private string $title;
     private string $fontColor;
     private string $backgoundColor;
     private ?string $picture;
     private array $boxes;
 
-    public function __construct(BingoId $id, int $userId, string $title, string $fontColor, string $backgoundColor, ?string $picture)
+    public function __construct(BingoId $id, UserId $userId, string $title, string $fontColor, string $backgoundColor, ?string $picture)
     {
         $this->id = $id;
         $this->userId = $userId;
@@ -28,7 +28,7 @@ final class Bingo
         return $this->id;
     }
 
-    public function userId(): int
+    public function userId(): UserId
     {
         return $this->userId;
     }

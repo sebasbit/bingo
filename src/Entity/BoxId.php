@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Utils\Id;
 
-final class BoxId extends Id
+class BoxId extends Id
 {
 
 }

@@ -2,9 +2,7 @@
 
 namespace App\Entity;
 
-use App\Utils\Id;
-
-class BingoId extends Id
+class User
 {
 
 }
