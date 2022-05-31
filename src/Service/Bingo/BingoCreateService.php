@@ -16,19 +16,10 @@ class BingoCreateService
     const DEFAULT_PICTURE = null;
     const DEFAULT_NUMBER_OF_BOXES = 24;
 
-    private UserRepository $userRepository;
-
-    public function __construct(UserRepository $userRepository)
-    {
-        $this->userRepository = $userRepository;
-    }
-
     public function execute(BingoCreateInput $input): Bingo
     {
         $userId = new UserId($input->userId());
         $title = $input->title();
-
-        $user = $this->userRepository->findOrFail($userId);
 
         $bingo = new Bingo(
             BingoId::generate(), // Uuid(null), | $this->bingoRepository->nextIdentity();
