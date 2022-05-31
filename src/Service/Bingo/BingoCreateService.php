@@ -3,11 +3,10 @@
 namespace App\Service\Bingo;
 
 use App\Entity\Bingo;
-use App\Entity\BingoId;
 use App\Entity\Box;
-use App\Entity\BoxId;
 use App\Entity\UserId;
-use App\Repository\UserRepository;
+use App\Repository\BingoRepository;
+use App\Repository\BoxRepository;
 
 class BingoCreateService
 {
@@ -16,13 +15,22 @@ class BingoCreateService
     const DEFAULT_PICTURE = null;
     const DEFAULT_NUMBER_OF_BOXES = 24;
 
+    private BingoRepository $bingoRepository;
+    private BoxRepository $boxRepository;
+
+    public function __construct(BingoRepository $bingoRepository, BoxRepository $boxRepository)
+    {
+        $this->bingoRepository = $bingoRepository;
+        $this->boxRepository = $boxRepository;
+    }
+
     public function execute(BingoCreateInput $input): Bingo
     {
         $userId = new UserId($input->userId());
         $title = $input->title();
 
         $bingo = new Bingo(
-            BingoId::generate(), // Uuid(null), | $this->bingoRepository->nextIdentity();
+            $this->bingoRepository->nextIdentity(),
             $userId,
             $title,
             self::DEFAULT_FONT_COLOR,
@@ -31,7 +39,13 @@ class BingoCreateService
         );
 
         for ($i=0; $i < self::DEFAULT_NUMBER_OF_BOXES; $i++) {
-            $bingo->addBox(new Box(BoxId::generate(), $i, ''));
+            $box = new Box(
+                $this->boxRepository->nextIdentity(),
+                $i,
+                ''
+            );
+
+            $bingo->addBox($box);
         }
 
         return $bingo;
