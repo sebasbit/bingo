@@ -72,8 +72,25 @@ class BingoCreateServiceTest extends TestCase
             $box = $boxes[$i];
 
             $this->assertInstanceOf(BoxId::class, $box->id());
+            $this->assertEquals($box->bingoId(), $bingo->id());
             $this->assertSame($i, $box->order());
             $this->assertSame('', $box->content());
         }
+    }
+
+    public function test_persist_a_new_bingo()
+    {
+        $this->bingoRepositoryMock
+            ->expects($this->once())
+            ->method('save');
+
+        $input = new BingoCreateInput('a0fdf8b5-bf34-4ed1-a045-7d0f5324a1cf', 'bingo-bongo');
+        $bingoCreateService = new BingoCreateService($this->bingoRepositoryMock, $this->boxRepositoryMock);
+
+        $bingo = $bingoCreateService->execute($input);
+
+        $this->assertSame('000000', $bingo->fontColor());
+        $this->assertSame('FFFFFF', $bingo->backgoundColor());
+        $this->assertNull($bingo->picture());
     }
 }

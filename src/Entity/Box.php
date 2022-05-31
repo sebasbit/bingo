@@ -5,12 +5,14 @@ namespace App\Entity;
 class Box
 {
     private BoxId $id;
+    private BingoId $bingoId;
     private int $order;
     private string $content;
 
-    public function __construct(BoxId $id, int $order, string $content)
+    public function __construct(BoxId $id, BingoId $bingoId, int $order, string $content)
     {
         $this->id = $id;
+        $this->bingoId = $bingoId;
         $this->order = $order;
         $this->content = $content;
     }
@@ -18,6 +20,11 @@ class Box
     public function id(): BoxId
     {
         return $this->id;
+    }
+
+    public function bingoId(): BingoId
+    {
+        return $this->bingoId;
     }
 
     public function order(): int

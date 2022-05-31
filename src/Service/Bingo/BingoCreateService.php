@@ -41,12 +41,15 @@ class BingoCreateService
         for ($i=0; $i < self::DEFAULT_NUMBER_OF_BOXES; $i++) {
             $box = new Box(
                 $this->boxRepository->nextIdentity(),
+                $bingo->id(),
                 $i,
                 ''
             );
 
             $bingo->addBox($box);
         }
+
+        $this->bingoRepository->save($bingo);
 
         return $bingo;
     }
