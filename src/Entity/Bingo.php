@@ -8,7 +8,7 @@ final class Bingo
     private string $title;
     private string $fontColor;
     private string $backgoundColor;
-    private ?string $picture; // TODO: rename as $freeSpaceImage?
+    private ?string $picture;
     private array $boxes;
 
     public function __construct(int $userId, string $title, string $fontColor, string $backgoundColor, ?string $picture)
