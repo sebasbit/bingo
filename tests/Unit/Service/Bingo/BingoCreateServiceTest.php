@@ -81,4 +81,15 @@ class BingoCreateServiceTest extends TestCase
             $this->assertSame('', $box->content());
         }
     }
+
+    public function test_return_a_bingo_with_id()
+    {
+        // assign
+        $bingoCreateService = new BingoCreateService();
+        $bingoCreateInput = new BingoCreateInput(1, 'bingo-bongo');
+        // act
+        $bingo = $bingoCreateService->execute($bingoCreateInput);
+        // asert
+        $this->assertNotNull($bingo->id());
+    }
 }

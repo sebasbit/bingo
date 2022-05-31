@@ -4,6 +4,7 @@ namespace App\Entity;
 
 final class Bingo
 {
+    private BingoId $id;
     private int $userId;
     private string $title;
     private string $fontColor;
@@ -11,14 +12,20 @@ final class Bingo
     private ?string $picture;
     private array $boxes;
 
-    public function __construct(int $userId, string $title, string $fontColor, string $backgoundColor, ?string $picture)
+    public function __construct(BingoId $id, int $userId, string $title, string $fontColor, string $backgoundColor, ?string $picture)
     {
+        $this->id = $id;
         $this->userId = $userId;
         $this->title = $title;
         $this->fontColor = $fontColor;
         $this->backgoundColor = $backgoundColor;
         $this->picture = $picture;
         $this->boxes = [];
+    }
+
+    public function id(): BingoId
+    {
+        return $this->id;
     }
 
     public function userId(): int
